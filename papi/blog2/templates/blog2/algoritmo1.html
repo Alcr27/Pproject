@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Algoritmo KNN</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    </head>
+   <body background="https://img.freepik.com/free-vector/gradient-network-connection-background_23-2148865392.jpg?w=740&t=st=1668660123~exp=1668660723~hmac=865c86ab3d429451009cf8f34804d3a2983c43f298215717f87d8fa2a69695f0">
+    <nav class="navbar navbar-expand-lg bg-primary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="{% url 'post_list' %}">INICIO DE TOÑO</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="{% url 'blog2' %}">sumatoria</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="http://127.0.0.1:8000/admin/">Admin</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Algoritmo de Clasificación
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="{% url 'algoritmo1' %}">Knn</a></li>
+                <li><a class="dropdown-item" href="{% url 'algoritmoBaye' %}">Bayesiano</a></li>
+                <li><a class="dropdown-item" href="{% url 'RALineal' %}">Regresion Lineal</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+        <h1>Distancia Euclidiana</h1>
+        <table class="table table-striped"> 
+  <thead>
+<form>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Ingrese X1</label>
+    <input type="text" class="form-control" id="inputx1" placeholder="X1">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Ingrese X2</label>
+    <input type="text" class="form-control" id="inputx2" placeholder="X2">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Ingrese X3</label>
+    <input type="text" class="form-control" id="inputx3" placeholder="X3">
+  </div>
+  <button type="submit" class="btn btn-primary">Accept</button>
+</form>
+<table class="table table-dark">
+  <thead>
+    <tr>
+      <th scope="col">x1</th>
+      <th scope="col">x3</th>
+      <th scope="col">x4</th>
+      <th scope="col">Distancia Euclidiana</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+    {% for var,distanciaEu in contexto %}
+      <td>{{var.x1}}</td>
+      <td>{{var.x3}}</td>
+      <td>{{var.x4}}</td>
+      <td>{{distanciaEu}}</td>
+    </tr>
+  </tbody>
+  {% endfor %}
+</table>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+</body>
+</html>
